@@ -1,4 +1,7 @@
 # Demography
+### BABATOUNDE Chabi Rodolpho ###
+*Master II  DFS, Université de Corse*
+
 This API is used to record demographic events (Births and Deaths).
 This API uses Elasticsearch to store data. We used a docker image. To configure the data source, you have to go to the file *"application.properties"* 
 
