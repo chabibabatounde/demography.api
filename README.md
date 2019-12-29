@@ -26,6 +26,9 @@ To add data, we make PUT type queries. One or more data can be inserted from an 
 
 - Add an event : 
 http://localhost:8080/Demography/save
+
+*Parameter exemple*
+
 ```json
 {
       "id": 1,
@@ -43,6 +46,7 @@ http://localhost:8080/Demography/save
 - Add multiple events : 
 http://localhost:8080/Demography/saveAll
 
+*Parameter exemple*
 
 ```json
 [
@@ -78,6 +82,9 @@ http://localhost:8080/Demography/count
 
 - To  get record by event type: 
 http://localhost:8080/Demography/findAll
+
+*Response exemple*
+
 ```json
 {
     "content": [
@@ -139,6 +146,9 @@ http://localhost:8080/Demography/findAll
 - To  get record by event Id: 
 http://localhost:8080/Demography/findById/{id}
 ({id} represente record identifier)
+
+*Response exemple*
+
 ```json
 {
     "id": "1",
@@ -156,7 +166,10 @@ http://localhost:8080/Demography/findById/{id}
 - To get record by name: 
 http://localhost:8080/Demography/findByPersonName/{personName}
 
-*e.g:* http://localhost:8080/Demography/findByPersonName/chabi_rodolpo
+*e.g:* http://localhost:8080/Demography/findByPersonName/chabi_rodolpho
+
+*Response exemple*
+
 ({personName} represente the person name)
 ```json
 {
@@ -176,6 +189,10 @@ http://localhost:8080/Demography/findByPersonName/{personName}
 http://localhost:8080/Demography/findByVilleNomVilleAndEventDateBetween/{nomVille}/{fromDate}/{toDate}
 
 *e.g:* http://localhost:8080/Demography/findByVilleNomVilleAndEventDateBetween/Paris/2019-09-22/2019-09-23
+
+*Response exemple*
+
+
 (
       {nomVille} represente the city name
       {fromDate} represente start date
@@ -203,7 +220,24 @@ You have also methods to :
 
 ```
 ### Upadte ###
+To delete we have PUT request like :
+http://localhost:8080/Demography/update/{Id}
 
+*Parameter exemple*
+
+```json
+{
+      "id": 1,
+      "eventDate":"2019-09-25",
+      "personName": "chabi rodolpho",
+      "value": 1,
+      "ville" :{
+        "lat" : 0.02,
+        "lng" : 3.005,
+        "nomVille" : "Paris"
+      }
+  }
+```
 
 
 ### Delete ###
