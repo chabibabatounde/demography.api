@@ -3,9 +3,9 @@ package com.example.demo.demography.api;
 import com.example.demo.model.Demography;
 import com.example.demo.repository.CustomDemographyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("Demography")
@@ -22,9 +22,9 @@ public class Update {
 
     /*Method for update a demographic event*/
     @PutMapping("/update")
-    public Demography update(@RequestBody Demography demography) {
+    public ResponseEntity update(@RequestBody Demography demography) {
         respository.save(demography);
-        return demography;
+        return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
     }
 
 }

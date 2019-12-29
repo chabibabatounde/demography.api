@@ -218,7 +218,7 @@ You have also methods to :
 - get record by city
 - get record by event Date for all cities
 
-```
+
 ### Upadte ###
 To delete we have PUT request like :
 http://localhost:8080/Demography/update/{Id}

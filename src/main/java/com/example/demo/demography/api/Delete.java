@@ -4,6 +4,8 @@ package com.example.demo.demography.api;
 import com.example.demo.model.Demography;
 import com.example.demo.repository.CustomDemographyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +25,8 @@ public class Delete {
 
     /*Method for creating a demographic event You can create many events by passing an events array*/
     @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable int id) {
+    public ResponseEntity deleteById(@PathVariable int id) {
         respository.deleteById(id);
+        return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
     }
 }
